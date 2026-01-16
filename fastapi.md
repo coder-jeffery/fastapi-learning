@@ -1,11 +1,18 @@
 FastAPI:
     https://fastapi.tiangolo.com/zh/
+FastAPI初始化项目:
+    python3 -m venv venv
+    source venv/bin/activate
+    pip install "fastapi[all]" uvicorn[standard]
 特性：
     精简编码 代码重复率低
     自带API交互文档
     API开发标准化
 
 启动方式： uvicorn main:app --reload
+
+
+uvicorn run:app --reload
 
 http://127.0.0.1:8000/hello/tim
 

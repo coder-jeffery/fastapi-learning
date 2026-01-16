@@ -1,0 +1,110 @@
+routing_policy="intelligent" 是 LangGraph Swarm 中的一个重要配置参数，它决定了代理之间的路由和协作策略。
+
+routing_policy 的含义
+routing_policy 定义了在多个代理组成的群组中，如何决定下一个应该激活哪个代理来处理消息。它控制着代理间的通信流程和协作方式。
+
+主要的 routing_policy 类型
+根据 LangGraph Swarm 的文档，主要有以下几种路由策略：
+
+1. "intelligent" (智能路由)
+默认推荐使用
+
+含义: 使用大语言模型自动分析对话上下文和用户意图，智能决定下一个应该调用哪个代理
+
+工作原理: LLM 会分析当前对话状态，预测最合适的下一个代理
+
+优点: 最灵活，能处理复杂场景，支持动态路由决策
+
+适用场景: 多领域对话、复杂任务分解、需要上下文理解的情况
+
+2. "round_robin" (轮询路由)
+含义: 按照代理列表的顺序依次轮流调用
+
+工作原理: A → B → C → A → B → C... 循环调用
+
+优点: 简单公平，确保每个代理都有机会参与
+
+缺点: 可能调用不相关的代理
+
+适用场景: 测试环境、简单的多代理轮询
+
+3. "broadcast" (广播路由)
+含义: 将消息同时发送给所有代理，收集所有响应
+
+工作原理: 并行调用所有代理，然后聚合结果
+
+优点: 获取全面的响应集合
+
+缺点: 资源消耗大，可能有冗余响应
+
+适用场景: 头脑风暴、多角度分析、需要全面意见的场景
+
+4. "first_available" (首个可用路由)
+含义: 按照代理列表顺序，调用第一个可用的代理
+
+工作原理: 按顺序检查代理，使用第一个能处理请求的代理
+
+优点: 快速响应，避免不必要的调用
+
+缺点: 可能不是最优选择
+
+适用场景: 优先级明确的代理队列
+
+5. "manual" (手动路由)
+含义: 完全由开发者通过代码控制路由逻辑
+
+工作原理: 需要自定义路由函数来决定下一个代理
+
+优点: 完全控制，高度定制化
+
+缺点: 需要手动编写路由逻辑
+
+适用场景: 特殊业务逻辑、复杂的自定义路由需求
+
+代码示例对比
+python
+# 智能路由（推荐）
+swarm_intelligent = create_swarm(
+    agents=[router_agent, flight_assistant, hotel_assistant],
+    default_active_agent="router_agent",
+    routing_policy="intelligent"  # LLM 自动决定最佳路由
+)
+
+# 轮询路由
+swarm_round_robin = create_swarm(
+    agents=[flight_assistant, hotel_assistant],
+    default_active_agent="flight_assistant",
+    routing_policy="round_robin"  # 依次轮流调用
+)
+
+# 广播路由
+swarm_broadcast = create_swarm(
+    agents=[flight_assistant, hotel_assistant, travel_advisor],
+    default_active_agent="flight_assistant",
+    routing_policy="broadcast"  # 同时调用所有代理
+)
+
+# 手动路由（需要自定义路由函数）
+def custom_router(state):
+    # 自定义路由逻辑
+    if "hotel" in state["messages"][-1].content.lower():
+        return "hotel_assistant"
+    elif "flight" in state["messages"][-1].content.lower():
+        return "flight_assistant"
+    else:
+        return "router_agent"
+
+swarm_manual = create_swarm(
+    agents=[router_agent, flight_assistant, hotel_assistant],
+    default_active_agent="router_agent",
+    routing_policy="manual",
+    manual_routing_fn=custom_router  # 提供自定义路由函数
+)
+推荐使用场景
+intelligent: 大多数生产环境，特别是需要自然语言理解的场景
+
+round_robin: 测试或简单的多代理协作
+
+broadcast: 需要多角度分析或专家意见的场景
+
+manual: 有特殊业务逻辑需求的场景

@@ -1,0 +1,64 @@
+\c system_db
+
+drop table users;
+
+-- 1. 用户表（主表）
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    age INT
+);
+
+-- 2. 文章表（关联用户表，外键 user_id）
+CREATE TABLE articles (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(100) NOT NULL,
+    content TEXT,
+    user_id INT REFERENCES users(id) ON DELETE CASCADE,  -- 外键关联用户
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 3. 评论表（关联文章表，外键 article_id）
+CREATE TABLE comments (
+    id SERIAL PRIMARY KEY,
+    content TEXT NOT NULL,
+    article_id INT REFERENCES articles(id) ON DELETE CASCADE,  -- 外键关联文章
+    user_name VARCHAR(50),
+    create_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- 插入测试数据
+INSERT INTO users (name, age) VALUES ('张三', 25), ('李四', 30);
+INSERT INTO articles (title, content, user_id) VALUES
+('PG 入门', '多表查询很重要', 1),
+('Python 教程', '基础语法', 2);
+INSERT INTO comments (content, article_id, user_name) VALUES
+('写得好', 1, '读者1'), ('求进阶', 1, '读者2'), ('收藏了', 2, '读者3');
+
+
+
+
+SELECT
+    u.name AS 用户名,
+    a.title AS 文章标题,
+    a.create_time AS 发布时间
+FROM users u  -- 别名 u，简化写法
+INNER JOIN articles a ON u.id = a.user_id;  -- 关联条件：用户id = 文章所属用户id
+
+
+
+SELECT
+    u.name AS 用户名,
+    a.title AS 文章标题,
+    a.create_time AS 发布时间
+FROM users u  -- 别名 u，简化写法
+INNER JOIN articles a
+ON u.id = a.user_id;  -- 关联条件：用户id = 文章所属用户id
+
+
+-- 全连接查询
+SELECT
+    COALESCE(u.name, '无作者') AS 用户名,
+    COALESCE(a.title, '无文章') AS 文章标题
+FROM users u
+FULL JOIN articles a ON u.id = a.user_id;
