@@ -42,3 +42,35 @@ lst1 = [1,2,3]
 lst2 = [4,5,6]
 res3 = list(map(lambda x,y: x+y, lst1, lst2))
 print(res3)  # [5,7,9]
+
+
+
+# 需求：筛选列表 [1,2,3,4,5,6] 中的所有偶数
+lst = [1,2,3,4,5,6]
+
+# lambda+filter 实现：判断x是否是偶数 → x%2 == 0
+res = list(filter(lambda x: x % 2 == 0, lst))
+print(res)  # [2,4,6]
+
+# 进阶：筛选列表中大于10的数字
+lst = [5,8,11,15,3,20]
+res = list(filter(lambda x: x>10, lst))
+print(res)  # [11,15,20]
+
+
+
+# 示例1：对字典列表，按指定key的值排序（比如按年龄age排序）
+students = [
+    {"name": "张三", "age": 20},
+    {"name": "李四", "age": 18},
+    {"name": "王五", "age": 22}
+]
+
+res = sorted(students,key=lambda x: x['age'], reverse=True)
+print(res)
+
+
+#对元组列表，按元组的第2个元素排序
+lst = [(1,3), (4,1), (2,5), (3,2)]
+res2 = sorted(lst,  key=lambda x: x[1])
+print(res2)
