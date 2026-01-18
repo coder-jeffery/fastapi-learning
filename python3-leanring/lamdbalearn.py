@@ -74,3 +74,4 @@ print(res)
 lst = [(1,3), (4,1), (2,5), (3,2)]
 res2 = sorted(lst,  key=lambda x: x[1])
 print(res2)
+
