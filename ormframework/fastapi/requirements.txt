@@ -1,0 +1,15 @@
+#  pip is available: 24.3.1 -> 25.3
+# pip install fastapi==0.104.1 uvicorn==0.24.0.post1
+# 核心框架+服务器
+fastapi==0.104.1
+uvicorn==0.24.0.post1
+
+# 可选：如果用到数据库/数据校验，也加进来（后续会学）
+pydantic==2.5.2
+sqlalchemy==2.0.23
+
+# command : uv pip install -r requirements.txt
+# lsof -i :8000
+# command : unicorn  main:app --reload  | uvicorn main:app --host 0.0.0.0 --port 8000
+
+# package module: uvicorn/pydantic/sqlalchemy
