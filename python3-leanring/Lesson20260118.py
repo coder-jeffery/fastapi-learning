@@ -1,6 +1,5 @@
 from pydantic import UUID1
 
-
 class lesson20260118:
     def __init__(self):
         pass
@@ -8,6 +7,23 @@ class lesson20260118:
     def Increment(self, value):
         self.value += 1
         return self.value
+
+    def add_sub_mul_divi(self, number1, number2, operation):
+        if operation == '+':
+            return number1 + number2
+        elif operation == '-':
+            return number1 - number2
+        elif operation == '*':
+            return number1 * number2
+        elif operation == '/':
+            return number1 / number2
+
+    # calc  = lesson20260118()
+    # print(f'运算所得结果：', lesson20260118().add_sub_mul_divi(5, 10, '+'))
+
+
+
+
 
     var_int = 100
     var_float = 250.09
@@ -24,5 +40,11 @@ class lesson20260118:
     print('\n')
     print(var_dict, '\n',var_tuple)
 
+
+
+
+calc = lesson20260118()
+# print(calc.Increment(2))
+print(f'运算所得数值：',calc.add_sub_mul_divi(15, 15, '*'))
 
 print('lesson 20260118')
