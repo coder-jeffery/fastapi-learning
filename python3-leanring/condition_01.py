@@ -1,4 +1,4 @@
-class Condition:
+class condition_01:
 
     @classmethod
     def learncondition(cls, score, subject, name) -> str | None:
@@ -6,9 +6,13 @@ class Condition:
         level_message = cls.calculatescore(score,subject)
         level_title = cls.exam_whoami(name)
         level_message= level_message + level_title
-        level_message = level_message + Condition.envinfo('jeffery','123456')
+        level_message = level_message + condition_01.envinfo('jeffery','123456')
         return level_message
-
+    '''
+        if else / for / while / continue / 
+        collection: 
+            list / tuple / dictionary /
+    '''
     @classmethod
     def calculatescore(cls, score, subject):
         score = int(score)
@@ -25,7 +29,8 @@ class Condition:
 
     @classmethod
     def subject(cls, sub) -> str | None:
-        subject = {'a':'English', 'b':'Mathematics', 'c':'Chinese', 'd':'Physics','e':'Biology', 'f':'Geography', 'g':'History', 'm':'Music'}
+        subject = {'a':'English Lesson', 'b':'Mathematics Lesson', 'c':'Chinese Lesson', 'd':'Physics Lesson',
+                   'e':'Biology Lesson', 'f':'Geography Lesson', 'g':'History Lesson', 'm':'Music Lesson'}
 
         for key, value in subject.items():
             if value == sub:
@@ -36,14 +41,14 @@ class Condition:
         return subject.get(sub)
 
     def exam_whoami(self) -> str | None:
-        name = 'my name is jeffery'
+        name =   'my name is jeffery' + '\n'
         return name
 
     @staticmethod
     def envinfo(username, password) -> str | None:
         username = username.strip()
         password = password.strip()
-        return  username + ' ' + password
+        return  f'username:  {username}, \npassword: {password}'
 
 
 # condition = Condition()
@@ -53,5 +58,8 @@ class Condition:
 # print(condition.subject(params))
 
 # exam_student = Condition()
-print(Condition.learncondition(99, 'a','jeffery'))
+print(condition_01.learncondition(99, 'a','jeffery'))
+# print(Condition.learncondition(99, 'a','jeffery'))
+str_msg = 'hello world'
+print(len(str_msg))
 
