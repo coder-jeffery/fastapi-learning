@@ -22,9 +22,6 @@ class lesson20260118:
     # print(f'运算所得结果：', lesson20260118().add_sub_mul_divi(5, 10, '+'))
 
 
-
-
-
     var_int = 100
     var_float = 250.09
     var_str = f'RAG | deepseek | Qwen | Chatgpt | Grok | Zhipu | OpenAI | Claude | Gemini'
@@ -40,8 +37,13 @@ class lesson20260118:
     print('\n')
     print(var_dict, '\n',var_tuple)
 
-
-
+'''
+list vs tuple:
+    list 可变  []     有序
+    tuple 不可变 （）  有序
+    dictionary {}
+    
+'''
 
 calc = lesson20260118()
 # print(calc.Increment(2))
