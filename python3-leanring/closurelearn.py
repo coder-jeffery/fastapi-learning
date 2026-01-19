@@ -8,6 +8,16 @@ class closurelearn:
     特性：
         a.保存变量状态，持久话存储
         b.变量互相隔离，互不干扰
+
+
+        nonlocal 闭包修改外层变量专用
+        global 全局变量
+    使用场景：
+        保持上下文状态
+        实现函数工厂
+        python装饰器的底层闭包
+    作用：
+        计数器、函数工程， 装饰器
     '''
     def __init__(self):
         pass
