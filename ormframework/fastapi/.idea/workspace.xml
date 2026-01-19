@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2e5d7c65-da41-4b37-b0de-d4b526253501" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/fastapi.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_main.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mysql/testmysql.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mysql/testmysql2.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python3-leanring/datelearning.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../python3-leanring/randomlearning.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../python3-leanring/condition_02.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../python3-leanring/condition_02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../python复习计划.MD" beforeDir="false" afterPath="$PROJECT_DIR$/../../python复习计划.MD" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../python3-leanring/Student.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../python3-leanring/pythonlesson.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../python3-leanring/threadlearning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../python3-leanring/lamdbalearn.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../python3-leanring/lamdbalearn.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +30,9 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="38QFuyuLtIoCVBVaZgZj6f5K3bh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -50,9 +40,11 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "FastAPI.fastapi.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -95,6 +87,7 @@
       <option name="presentableId" value="Default" />
       <updated>1768724114966</updated>
       <workItem from="1768724115986" duration="7621000" />
+      <workItem from="1768801797744" duration="1237000" />
     </task>
     <servers />
   </component>
@@ -111,5 +104,8 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/fastapi$fastapi.coverage" NAME="fastapi Coverage Results" MODIFIED="1768806066876" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

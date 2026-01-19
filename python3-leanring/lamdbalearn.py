@@ -54,10 +54,10 @@ print(res)  # [2,4,6]
 
 # 进阶：筛选列表中大于10的数字
 lst = [5,8,11,15,3,20]
-res = list(filter(lambda x: x>10, lst))
+res = list(filter(lambda x: x>5, lst))
 print(res)  # [11,15,20]
 
-
+# !!!! 简单逻辑用 lambda，复杂逻辑用 def
 
 # 示例1：对字典列表，按指定key的值排序（比如按年龄age排序）
 students = [
