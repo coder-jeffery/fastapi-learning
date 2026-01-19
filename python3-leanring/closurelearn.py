@@ -9,7 +9,6 @@ class closurelearn:
         a.保存变量状态，持久话存储
         b.变量互相隔离，互不干扰
 
-
         nonlocal 闭包修改外层变量专用
         global 全局变量
     使用场景：
