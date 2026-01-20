@@ -26,9 +26,18 @@ class closurelearn:
             return x + y
         return inner_function
 
+
+    # def outter_function(self, x):
+    #     def inner_function(y):
+    #         return x + y
+    #     return inner_function
+    #
+
 instance = closurelearn()
 print(instance)
 
 func = instance.outter_function(10)
 print(func(5))
+
+
 

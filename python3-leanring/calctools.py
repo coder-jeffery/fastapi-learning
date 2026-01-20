@@ -10,8 +10,5 @@ class CalcTools:
         elif operation == '/':
             return number1 / number2
 
-
-
-
 calc = CalcTools()
 print(f'运算所得结果：',calc.add_sub_mul_div(1,2,'+'))
