@@ -3,7 +3,11 @@ import numpy as np
 
 class BM25lesson02:
     '''
-        截断归一化
+截断归一化
+            np.percentile  - > np.clip
+    1.计算截断阈值：统计数据的目标分位数（如 95% 分位数），作为截断上限；
+    2.截断极值：将所有超过该阈值的分值替换为阈值（低于阈值的分值保持不变）；
+    3.Min-Max 归一化：对截断后的数据执行普通 Min-Max 归一化，映射到 0-1。
 
     '''
     import numpy as np
