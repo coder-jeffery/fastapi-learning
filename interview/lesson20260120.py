@@ -23,6 +23,17 @@ class lesson20260120:
         res = [num **2 for num in range(1,5)] #推导式循环
         print(res)
 
+
+    def testcase03(self):
+        test_case03 = []
+        for number in range(1,6):
+            test_case03.append(number **3)
+        print(test_case03)
+
+        res = [number **3 for number in range(1,6)]
+        print(res)
+
 tools = lesson20260120()
 print(tools.learnlist())
 print(tools.testcase02())
+print(tools.testcase03())
