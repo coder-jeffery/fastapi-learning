@@ -3,7 +3,7 @@ import numpy as np
 
 '''
 
-Min-Max归一化：
+Min-Max归一化： +  加权线形融合 
     norm_bm25 = (bm25 - min_bm25) / (max_bm25 - min_bm25)
     
 
