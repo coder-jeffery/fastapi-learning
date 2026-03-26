@@ -1,0 +1,51 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <list>
+          <option value="aiofiles" />
+          <option value="atomicwrites" />
+          <option value="attrs" />
+          <option value="bcrypt" />
+          <option value="certifi" />
+          <option value="cffi" />
+          <option value="chardet" />
+          <option value="colorama" />
+          <option value="cryptography" />
+          <option value="dnspython" />
+          <option value="ecdsa" />
+          <option value="email-validator" />
+          <option value="importlib-metadata" />
+          <option value="iniconfig" />
+          <option value="packaging" />
+          <option value="passlib" />
+          <option value="pluggy" />
+          <option value="py" />
+          <option value="pyasn1" />
+          <option value="pycparser" />
+          <option value="pyparsing" />
+          <option value="pytest" />
+          <option value="python-jose" />
+          <option value="python-multipart" />
+          <option value="requests" />
+          <option value="rsa" />
+          <option value="six" />
+          <option value="toml" />
+          <option value="urllib3" />
+          <option value="zipp" />
+          <option value="click" />
+          <option value="fastapi" />
+          <option value="h11" />
+          <option value="idna" />
+          <option value="pydantic" />
+          <option value="starlette" />
+          <option value="typing-extensions" />
+          <option value="uvicorn" />
+          <option value="SQLAlchemy" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
